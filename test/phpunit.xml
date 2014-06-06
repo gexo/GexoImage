@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit colors="true" bootstrap="./bootstrap.php">
+  <testsuite name="UnitTests">
+    <directory>./unitTests</directory>
+  </testsuite>
+  <testsuite name="IntegrationTests">
+    <directory>./integrationTests</directory>
+  </testsuite>
+  <filter>
+    <whitelist>
+      <directory suffix=".php">../src</directory>
+    </whitelist>
+  </filter>
+  <logging>
+    <log type="coverage-html" target="../phpunit-reports/coverage" charset="UTF-8" yui="true" highlight = "true" lowUpperBound="50" highLowerBound="80" />
+    <log type="testdox-html" target="../phpunit-reports/coverage/testdox.html" />
+  </logging>
+  <php>
+    <includePath>../</includePath>
+    <ini name="memory_limit" value="128M"/>
+  </php>
+</phpunit>
